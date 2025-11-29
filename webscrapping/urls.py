@@ -11,10 +11,11 @@ from core import views as weather
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # root URL & /index/ use the same view
-    path('', admin1.admn1, name='home'),
-    path('index/', admin1.admn1, name='index'),
+    # Root URL uses the same view as /index/
+    path('', admin1.index, name='home'),
+    path('index/', admin1.index, name='index'),
 
+    # Admin1 URLs
     path('admn1/', admin1.admn1, name='admn1'),
     path('userdetails/', admin1.userdetails, name='userdetails'),
     path('adminloginentered/', admin1.adminloginentered, name='adminloginentered'),
@@ -23,6 +24,7 @@ urlpatterns = [
     path('scrapping/', admin1.scrapping, name='scrapping'),
     path('logout/', admin1.logout, name='logout'),
 
+    # User URLs
     path('user/', user.userlogin, name='user'),
     path('userpage/', user.userpage, name='userpage'),
     path('userregister/', user.userregister, name='userregister'),
@@ -33,6 +35,7 @@ urlpatterns = [
     path('fpkart/', user.fpkart, name='fpkart'),
     path('jobsearch/', user.jobsearch, name='jobsearch'),
 
+    # News + Weather
     path('nnews/', news.nindex, name='nnews'),
     path('weather/', weather.home, name='weather'),
 ]
