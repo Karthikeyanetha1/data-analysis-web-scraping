@@ -11,9 +11,9 @@ from core import views as weather
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # root URL -> same as index page
-    path('', admin1.index, name='home'),
-    path('index/', admin1.index, name='index'),
+    # root URL & /index/ -> same as admn1 view
+    path('', admin1.admn1, name='home'),
+    path('index/', admin1.admn1, name='index'),
 
     path('admn1/', admin1.admn1, name='admn1'),
     path('userdetails/', admin1.userdetails, name='userdetails'),
