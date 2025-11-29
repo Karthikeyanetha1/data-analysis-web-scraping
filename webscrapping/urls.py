@@ -9,15 +9,14 @@ from newsApp import views as news
 from core import views as weather
 
 urlpatterns = [
-    # Django Admin Panel
     path('admin/', admin.site.urls),
 
-    # ---------- MAIN HOME URL ----------
+    # Root URL and /index/ go to the same homepage view
     path('', admin1.index, name='home'),
     path('index/', admin1.index, name='index'),
 
-    # ---------- ADMIN ----------
-    path('admn1/', admin1.admn1, name='admn1'),
+    # IMPORTANT: use adminlogin, NOT admn1
+    path('admn1/', admin1.adminlogin, name='admn1'),
     path('userdetails/', admin1.userdetails, name='userdetails'),
     path('adminloginentered/', admin1.adminloginentered, name='adminloginentered'),
     path('activateuser/', admin1.activateuser, name='activateuser'),
@@ -25,7 +24,6 @@ urlpatterns = [
     path('scrapping/', admin1.scrapping, name='scrapping'),
     path('logout/', admin1.logout, name='logout'),
 
-    # ---------- USER ----------
     path('user/', user.userlogin, name='user'),
     path('userpage/', user.userpage, name='userpage'),
     path('userregister/', user.userregister, name='userregister'),
@@ -36,10 +34,7 @@ urlpatterns = [
     path('fpkart/', user.fpkart, name='fpkart'),
     path('jobsearch/', user.jobsearch, name='jobsearch'),
 
-    # ---------- NEWS ----------
     path('nnews/', news.nindex, name='nnews'),
-
-    # ---------- WEATHER ----------
     path('weather/', weather.home, name='weather'),
 ]
 
