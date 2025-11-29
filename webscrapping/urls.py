@@ -9,13 +9,14 @@ from newsApp import views as news
 from core import views as weather
 
 urlpatterns = [
+    # Django Admin Panel
     path('admin/', admin.site.urls),
 
-    # Root URL uses the same view as /index/
+    # ---------- MAIN HOME URL ----------
     path('', admin1.index, name='home'),
     path('index/', admin1.index, name='index'),
 
-    # Admin1 URLs
+    # ---------- ADMIN ----------
     path('admn1/', admin1.admn1, name='admn1'),
     path('userdetails/', admin1.userdetails, name='userdetails'),
     path('adminloginentered/', admin1.adminloginentered, name='adminloginentered'),
@@ -24,7 +25,7 @@ urlpatterns = [
     path('scrapping/', admin1.scrapping, name='scrapping'),
     path('logout/', admin1.logout, name='logout'),
 
-    # User URLs
+    # ---------- USER ----------
     path('user/', user.userlogin, name='user'),
     path('userpage/', user.userpage, name='userpage'),
     path('userregister/', user.userregister, name='userregister'),
@@ -35,10 +36,14 @@ urlpatterns = [
     path('fpkart/', user.fpkart, name='fpkart'),
     path('jobsearch/', user.jobsearch, name='jobsearch'),
 
-    # News + Weather
+    # ---------- NEWS ----------
     path('nnews/', news.nindex, name='nnews'),
+
+    # ---------- WEATHER ----------
     path('weather/', weather.home, name='weather'),
 ]
 
+# ---------- MEDIA SUPPORT ----------
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
