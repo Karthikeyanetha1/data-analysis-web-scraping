@@ -43,7 +43,5 @@ urlpatterns = [
     path('weather/', weather.home, name='weather'),
 ]
 
-# ---------- MEDIA SUPPORT ----------
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
