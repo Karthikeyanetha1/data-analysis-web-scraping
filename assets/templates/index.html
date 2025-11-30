@@ -1,7 +1,10 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block contents %}
-<div>
+{# 
+    For now we just reuse the default content from base.html.
+    If you ever want a different home layout, you can override block content here.
+#}
 
-        <h2><p>welcome to homepage.....</p></h2>
-    {% endblock %}
+{% block content %}
+    {{ block.super }}
+{% endblock %}
