@@ -4,8 +4,6 @@ from django.http import HttpResponse
 from django.contrib import messages
 import csv
 import io
-import xlrd
-import xlwt
 from io import TextIOWrapper
 
 from requests import get

@@ -15,8 +15,10 @@ from bs4 import BeautifulSoup
 import requests
 import json
 from .jp import job_data
-import pandas as pd
-
+try:
+    import pandas as pd
+except ImportError:
+    pd = None
 
 def index(request):
     return render(request,'index.html')
